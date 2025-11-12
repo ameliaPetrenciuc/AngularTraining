@@ -1,6 +1,6 @@
 import { Component, Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Product } from '../../../types/products.types';
+import { Product } from '../../../features/shared/types/products.types';
 
 @Component({
   selector: 'app-products-details-view',
@@ -10,5 +10,5 @@ import { Product } from '../../../types/products.types';
   styleUrl: './products-details-view.scss',
 })
 export class ProductsDetailsView {
-  @Input() product?: Product;
+  @Input() product!: Product;
 }

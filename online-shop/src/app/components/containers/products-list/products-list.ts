@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { productList } from '../../../mocks/products.mocks';
 import { ProductsListView } from '../../presentational/products-list-view/products-list-view';
 import { ProductsDetails } from '../../containers/products-details/products-details';
-import { Product } from '../../../types/products.types';
+import { Product } from '../../../features/shared/types/products.types';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -13,11 +13,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './products-list.scss',
 })
 export class ProductsList {
-  products= productList
+  protected readonly products= productList
 
-  selectedProduct?: Product;
+  protected selectedProduct?: Product;
 
-  onProductSelected(product: Product) {
+  protected onProductSelected(product: Product): void {
     this.selectedProduct = product;
   }
 }

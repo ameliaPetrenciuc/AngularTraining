@@ -1,6 +1,6 @@
 @for(product of products; track product.name) {
     <div class="product-card" (click)="selectProduct.emit(product)">
         <h3>{{ product.name }}</h3>
-        <p>Price: ${{ product.price }}</p>
+        <p>Price: {{ product.price | currency:'USD':'symbol':'1.2-2' }}</p>
     </div>
 }

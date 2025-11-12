@@ -1,4 +1,4 @@
-import { Product } from '../types/products.types';
+import { Product } from '../features/shared/types/products.types';
 
 export const productList: Product[] = [
   { id: 1, name: 'Laptop', price: 1200, description: 'High-end laptop' },

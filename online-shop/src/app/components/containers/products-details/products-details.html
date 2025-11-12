@@ -1,9 +1,5 @@
 @if (product){
-    <div class="details-card">
-        <h2>{{ product.name }}</h2>
-        <p class="description">{{ product.description }}</p>
-        <p class="price">{{ product.price }} $</p>
-    </div>
+    <app-products-details-view [product]="product"></app-products-details-view>
 }@else {
     <div class="no-selection">
           Please select a product.
