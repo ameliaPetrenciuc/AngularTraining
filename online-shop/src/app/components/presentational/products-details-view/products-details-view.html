@@ -1,9 +1,7 @@
-<div *ngIf="product">
-  <h2>{{ product.name }}</h2>
-  <p><strong>Price:</strong> ${{ product.price }}</p>
-  <p><strong>Description:</strong> {{ product.description }}</p>
-</div>
-
-<div *ngIf="!product">
-  <p>Select a product to see its details.</p>
-</div>
+@if (product) {
+    <h2>{{ product.name }}</h2>
+    <p><strong>Price:</strong> ${{ product.price }}</p>
+    <p><strong>Description:</strong> {{ product.description }}</p>
+}@else {
+    <p>Select a product to see its details.</p>
+}

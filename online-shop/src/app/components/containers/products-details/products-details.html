@@ -1,10 +1,12 @@
-<div *ngIf="product" class="details-card">
-
-  <h2>{{ product.name }}</h2>
-  <p class="description">{{ product.description }}</p>
-  <p class="price">{{ product.price }} $</p>
-</div>
-
-<div *ngIf="!product" class="no-selection">
-  Please select a product.
-</div>
+@if (product){
+    <div class="details-card">
+        <h2>{{ product.name }}</h2>
+        <p class="description">{{ product.description }}</p>
+        <p class="price">{{ product.price }} $</p>
+    </div>
+}@else {
+    <div class="no-selection">
+          Please select a product.
+    </div>
+}
+   

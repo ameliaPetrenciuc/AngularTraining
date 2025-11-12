@@ -1,4 +1,6 @@
-<div *ngFor="let product of products" class="product-card" (click)="selectProduct.emit(product)">
-  <h3>{{ product.name }}</h3>
-  <p>Price: ${{ product.price }}</p>
-</div>
+@for(product of products; track product.name) {
+    <div class="product-card" (click)="selectProduct.emit(product)">
+        <h3>{{ product.name }}</h3>
+        <p>Price: ${{ product.price }}</p>
+    </div>
+}
