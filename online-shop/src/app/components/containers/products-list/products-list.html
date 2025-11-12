@@ -1,0 +1,6 @@
+<app-products-list-view [products]="products" (selectProduct)="onProductSelected($event)">
+</app-products-list-view>
+
+<app-products-details
+  [product]="selectedProduct"
+></app-products-details>
