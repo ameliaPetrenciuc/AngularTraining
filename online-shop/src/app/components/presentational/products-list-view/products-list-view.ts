@@ -3,6 +3,7 @@ import { Product } from '../../../types/products.types';
 
 @Component({
   selector: 'app-products-list-view',
+  standalone: false,
   templateUrl: './products-list-view.html',
   styleUrl: './products-list-view.scss',
 })
