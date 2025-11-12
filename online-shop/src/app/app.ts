@@ -1,10 +1,7 @@
-import { Component, signal } from '@angular/core';
-import { ProductsList} from './components/containers/products-list/products-list';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [ProductsList],
   styleUrl: './app.scss',
   templateUrl: './app.html'  
 
