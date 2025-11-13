@@ -1,0 +1,26 @@
+:host {
+  --content-padding: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  height: 60px;
+  padding: var(--content-padding);
+  box-shadow: 0px 5px 25px var(--shadow-color);
+  align-items: center; 
+}
+
+.brand-name {
+  width: 100%; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+.content {
+  padding: var(--content-padding);
+}

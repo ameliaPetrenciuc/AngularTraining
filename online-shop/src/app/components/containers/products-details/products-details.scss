@@ -1,0 +1,26 @@
+.details-card {
+  padding: 20px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+
+  img {
+    width: 250px;
+    border-radius: 10px;
+  }
+
+  .price {
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+
+  .description {
+    opacity: 0.8;
+  }
+}
+
+.no-selection {
+  padding: 20px;
+  opacity: 0.6;
+}

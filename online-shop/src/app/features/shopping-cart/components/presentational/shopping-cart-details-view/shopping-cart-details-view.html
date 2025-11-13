@@ -1,0 +1,8 @@
+@for (product of productsInCart; track product.id) {
+  <div class="cart-item">
+    <h3>{{ product.name }}</h3>
+       <p>Price: {{ product.price | currency:'USD':'symbol':'1.2-2' }}</p>
+  </div>
+} @empty {
+  <p>Your cart is empty!</p>
+}
