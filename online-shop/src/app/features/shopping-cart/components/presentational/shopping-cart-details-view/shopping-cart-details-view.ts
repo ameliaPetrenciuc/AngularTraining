@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-shopping-cart-details-view',
-  // standalone: false,
   standalone:true,
   imports:[CommonModule],
   templateUrl: './shopping-cart-details-view.html',

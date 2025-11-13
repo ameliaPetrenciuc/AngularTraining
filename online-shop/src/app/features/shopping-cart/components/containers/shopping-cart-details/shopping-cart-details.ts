@@ -5,9 +5,8 @@ import { ShoppingCartDetailsView } from '../../presentational/shopping-cart-deta
 
 @Component({
   selector: 'app-shopping-cart-details',
-  // standalone: false,
   standalone:true,
-  imports: [CommonModule, ShoppingCartDetailsView],//in progress
+  imports: [CommonModule, ShoppingCartDetailsView],
   templateUrl: './shopping-cart-details.html',
   styleUrl: './shopping-cart-details.scss',
 })

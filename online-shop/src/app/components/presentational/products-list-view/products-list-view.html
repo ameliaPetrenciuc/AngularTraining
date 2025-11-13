@@ -1,4 +1,4 @@
-@for(product of products; track product.name) {
+@for(product of products; track product.id) {
     <div class="product-card" (click)="selectProduct.emit(product)">
         <h3>{{ product.name }}</h3>
         <p>Price: {{ product.price | currency:'USD':'symbol':'1.2-2' }}</p>
