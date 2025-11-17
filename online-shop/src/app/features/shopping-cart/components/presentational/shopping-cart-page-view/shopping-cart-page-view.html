@@ -1,0 +1,7 @@
+@if (productsInCart().length > 0) {
+  <app-products-list-view
+    [products]="productsInCart()">
+  </app-products-list-view>
+} @else {
+  <p>Your cart is empty.</p>
+}

@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, input, output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../../features/shared/types/products.types';
 
@@ -10,5 +10,6 @@ import { Product } from '../../../features/shared/types/products.types';
   styleUrl: './products-details-view.scss',
 })
 export class ProductsDetailsView {
-  @Input() product!: Product;
+  readonly product = input<Product>();
+  readonly addToCart = output<void>();
 }

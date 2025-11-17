@@ -1,4 +1,4 @@
-import { Component , Input} from '@angular/core';
+import { Component , input, output, ChangeDetectionStrategy} from '@angular/core';
 import { Product } from '../../../../shared/types/products.types';
 import { CommonModule } from '@angular/common';
 
@@ -8,7 +8,13 @@ import { CommonModule } from '@angular/common';
   imports:[CommonModule],
   templateUrl: './shopping-cart-details-view.html',
   styleUrl: './shopping-cart-details-view.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ShoppingCartDetailsView {
-  @Input() productsInCart: Product[] = [];
+  readonly productsInCart = input<Product[]>([]);
+  readonly navigateToCart = output<void>();
+  
+  showCart() {
+    this.navigateToCart.emit();
+  }
 }

@@ -1,6 +1,26 @@
-<app-products-list-view [products]="products" (selectProduct)="onProductSelected($event)">
-</app-products-list-view>
+<div class="product-manager-container">
+  <div class="search-bar-container">
+    <input 
+      type="text" 
+      placeholder="Search products..." 
+      (input)="updateSearchText($event)" 
+      class="search-input"
+    />
+    <button 
+      type="button" 
+      class="search-button"
+      aria-label="Search"
+    >
+      Search
+    </button>
+  </div>
 
-<app-products-details
-  [product]="selectedProduct"
-></app-products-details>
+  <div class="product-layout-grid">
+    <div class="list-panel">
+      <app-products-list-view 
+        [products]="filteredProducts()" 
+        (selectProduct)="onProductSelected($event)">
+      </app-products-list-view>
+    </div>
+  </div>
+</div>
