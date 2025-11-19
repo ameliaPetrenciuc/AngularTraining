@@ -19,7 +19,8 @@
     <div class="list-panel">
       <app-products-list-view 
         [products]="filteredProducts()" 
-        (selectProduct)="onProductSelected($event)">
+        (selectProduct)="onProductSelected($event)"
+        (addProduct)="onAddProduct()">
       </app-products-list-view>
     </div>
   </div>

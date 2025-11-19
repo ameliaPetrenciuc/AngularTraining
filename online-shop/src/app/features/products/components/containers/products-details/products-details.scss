@@ -1,0 +1,14 @@
+:host {
+    display: flex;             
+    justify-content: center;   
+    align-items: flex-start;   
+    min-height: 80vh;          
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.no-selection {
+    padding: 20px;
+    opacity: 0.6;
+    text-align: center;
+}

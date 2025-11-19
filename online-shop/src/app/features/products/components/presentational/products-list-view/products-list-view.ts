@@ -1,11 +1,11 @@
 import { Component, input, output, ChangeDetectionStrategy} from '@angular/core';
-import { CommonModule } from '@angular/common'
-import { Product } from '../../../features/shared/types/products.types';
+import { CurrencyPipe } from '@angular/common'
+import { Product } from '../../../../shared/types/products.types';
 
 @Component({
   selector: 'app-products-list-view',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CurrencyPipe],
   templateUrl: './products-list-view.html',
   styleUrl: './products-list-view.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -13,8 +13,9 @@ import { Product } from '../../../features/shared/types/products.types';
 export class ProductsListView {
   readonly products = input<Product[]>([]);
   readonly selectProduct = output<Product>();
+  readonly addProduct = output<void>();
 
-  onSelect(product: Product): void {
+  protected onSelect(product: Product): void {
     this.selectProduct.emit(product);
   }
 }

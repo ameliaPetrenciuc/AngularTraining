@@ -1,20 +1,20 @@
-import { Component , input, output, ChangeDetectionStrategy} from '@angular/core';
-import { Product } from '../../../../shared/types/products.types';
+import { Component , input, output, ChangeDetectionStrategy, signal, Signal} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CartItem } from '../../../../shared/types/cart-items.types';
 
 @Component({
   selector: 'app-shopping-cart-details-view',
-  standalone:true,
-  imports:[CommonModule],
+  standalone: true,
+  imports:[],
   templateUrl: './shopping-cart-details-view.html',
   styleUrl: './shopping-cart-details-view.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ShoppingCartDetailsView {
-  readonly productsInCart = input<Product[]>([]);
+  readonly cartItems = input.required<CartItem[]>();  
   readonly navigateToCart = output<void>();
   
-  showCart() {
+  protected showCart(): void {
     this.navigateToCart.emit();
   }
 }

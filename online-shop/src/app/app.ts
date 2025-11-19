@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { ShoppingCartDetails } from './features/shopping-cart/components/containers/shopping-cart-details/shopping-cart-details';
 
 @Component({
@@ -7,6 +7,7 @@ import { ShoppingCartDetails } from './features/shopping-cart/components/contain
   standalone: true,
   imports: [
     RouterOutlet,
+    RouterLink,
     ShoppingCartDetails
   ],
   styleUrl: './app.scss',

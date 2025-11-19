@@ -33,10 +33,10 @@
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.2s;
-}
 
-.search-button:hover {
-    background-color: #1d4ed8;
+    &:hover {
+        background-color: #1d4ed8;
+    }
 }
   
 .product-layout-grid { flex-direction: column; }

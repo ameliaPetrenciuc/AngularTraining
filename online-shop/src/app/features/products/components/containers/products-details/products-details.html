@@ -2,7 +2,9 @@
     <app-products-details-view 
         [product]="product()!"
         (addToCart)="onAddToCart()"
-    ></app-products-details-view>
+        (deleteProduct)="onDeleteProduct()"
+        (editProduct)="onEditProduct()">
+    </app-products-details-view>
 }@else {
     <div class="no-selection">
           Please select a product.
