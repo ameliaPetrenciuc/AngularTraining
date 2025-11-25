@@ -2,12 +2,17 @@ import { Component, signal, ChangeDetectionStrategy, computed, inject, OnInit } 
 import { ProductsListView } from '../../presentational/products-list-view/products-list-view';
 import { Product } from '../../../../shared/types/products.types';
 import { Router } from '@angular/router';
-import { ProductsService } from '../../../../../services/products.service';
+import { ProductsService } from '../../../services/products.service';
+import { AuthService } from '../../../../../services/auth-service';
+import { AsyncPipe } from '@angular/common';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-products-list',
   standalone: true,
-  imports: [ProductsListView],
+  imports: [ProductsListView, AsyncPipe, MatFormFieldModule, MatInputModule, MatIconModule],
   templateUrl: './products-list.html',
   styleUrl: './products-list.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -15,6 +20,7 @@ import { ProductsService } from '../../../../../services/products.service';
 export class ProductsList implements OnInit{
   private readonly router = inject(Router);
   private productService = inject(ProductsService);
+  protected authService = inject(AuthService);
   protected readonly products = signal<Product[]>([]);
   protected readonly searchText = signal<string>('');
 

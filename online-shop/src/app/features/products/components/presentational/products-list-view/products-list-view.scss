@@ -10,17 +10,13 @@
 }
 
 .view-details-button {
-    background-color: var(--primary-color, #2563eb);
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.2s;
+    background-color: var(--primary-color, #2563eb) !important;
+    color: white !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s !important;
 
     &:hover {
-    background-color: #1d4ed8;
+    background-color: #1d4ed8 !important;
   }
 }
 
@@ -31,8 +27,9 @@
 }
 
 .add-button {
-  background-color: #4caf50;
-  color: white;
+  background-color: #4caf50 !important; 
+  color: white !important;
+  
   border: none;
   padding: 0.6rem 1.2rem;
   border-radius: 6px;
@@ -41,10 +38,16 @@
   transition: background-color 0.2s;
 
   &:hover {
-    background-color: #45a049;
+    background-color: #45a049 !important; 
   }
 }
 
+.welcome-banner {
+  display: flex;           
+  flex-direction: column;  
+  align-items: center;    
+  justify-content: center;
+}
 
 
 

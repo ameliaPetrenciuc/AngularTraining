@@ -1,7 +1,11 @@
 <main>
   <header class="brand-name">
     <img class="brand-logo" src="assets/logo.svg" alt="logo" [routerLink]="['/products']" aria-hidden="true">
-    <app-shopping-cart-details></app-shopping-cart-details>
+    
+    <div class="header-actions">
+      <app-shopping-cart-details></app-shopping-cart-details> 
+      <app-user-info></app-user-info>            
+    </div>
   </header>
 
   <section class="content">

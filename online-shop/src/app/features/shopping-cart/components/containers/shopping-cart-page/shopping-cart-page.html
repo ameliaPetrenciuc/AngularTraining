@@ -1,3 +1,5 @@
 <app-cart-page-view 
-      [cartItems]="cartService.productsInCart()" 
-></app-cart-page-view>
+      [cartItems]="(items$ | async) ?? []"
+      (increment)="increment($event)"
+      (decrement)="decrement($event)">
+</app-cart-page-view>

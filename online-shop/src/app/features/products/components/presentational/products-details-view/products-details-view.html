@@ -1,22 +1,26 @@
 @if (product()) {
-  <div class="actions-toolbar">
-    <button class="edit-button" (click)="editProduct.emit()">
-      Edit
-    </button>
-    <button class="delete-button" (click)="deleteProduct.emit()">
-      Delete
-    </button>
-  </div>
+  @if (user()?.role === 'ADMIN') {
+    <div class="actions-toolbar">
+      <button class="edit-button" (click)="editProduct.emit()">
+        Edit
+      </button>
+      <button class="delete-button" (click)="deleteProduct.emit()">
+        Delete
+      </button>
+    </div>
+  }
 
   <div class="details-card">
-    <h2>{{ product()?.name}}</h2>
-    <p><strong>Price:</strong> {{ product()?.price | currency:'USD':'symbol':'1.2-2' }}</p>
-    <p><strong>Description:</strong> {{ product()?.description }}</p>
-    <p><strong>Weight:</strong> {{ product()?.weight }}</p>
-    <p><strong>Product Category:</strong> {{ product()?.category?.name }}</p>
+    <h2>{{ product().name}}</h2>
+    <p><strong>Price:</strong> {{ product().price | currency:'USD':'symbol':'1.2-2' }}</p>
+    <p><strong>Description:</strong> {{ product().description }}</p>
+    <p><strong>Weight:</strong> {{ product().weight }}</p>
+    <p><strong>Product Category:</strong> {{ product().category?.name }}</p>
 
-    <button class="add-button" (click)="addToCart.emit()">
-      Add to Cart
-    </button>
+    @if (user()?.role !== 'ADMIN') {
+      <button class="add-button" (click)="addToCart.emit(product())">
+        Add to Cart
+      </button>
+    }
   </div>
 }

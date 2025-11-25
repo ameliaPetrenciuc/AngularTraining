@@ -1,10 +1,10 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ProductsService } from '../../../../../services/products.service';
+import { ProductsService } from '../../../services/products.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductsFormView } from '../../presentational/products-form-view/products-form-view';
 import { ProductCategory } from '../../../../shared/types/product-category.types';
-import { ProductCategoryService } from '../../../../../services/product-category.service';
+import { ProductCategoryService } from '../../../services/product-category.service';
 
 @Component({
   selector: 'app-products-form',

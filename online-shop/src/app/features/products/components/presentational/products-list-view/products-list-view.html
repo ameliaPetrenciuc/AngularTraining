@@ -1,8 +1,16 @@
-<div class="cart-header">
-  <button class="add-button" (click)="addProduct.emit()">
-    Add Product
-  </button>
-</div>
+@if (user()) {
+  <div class="welcome-banner">
+    <h2>Welcome, user {{ user()?.username }} !</h2>
+  </div>
+}
+
+ @if (user()?.role === 'ADMIN') {
+  <div class="cart-header">
+    <button mat-flat-button class="add-button" (click)="addProduct.emit()">
+      Add Product
+    </button>
+  </div>
+ }
 
 @for(product of products(); track product.id) {
     <div class="product-card" (click)="onSelect(product)">
@@ -10,11 +18,8 @@
             <h3>{{ product.name }}</h3>
             <p>Price: {{ product.price | currency:'USD':'symbol':'1.2-2' }}</p>
         </div>
-    <button 
-        class="view-details-button" 
-        (click)="onSelect(product)"
-        >
+        <button matButton="filled" class="view-details-button" (click)="onSelect(product)">
           View details
-    </button>
+        </button>
     </div> 
 }

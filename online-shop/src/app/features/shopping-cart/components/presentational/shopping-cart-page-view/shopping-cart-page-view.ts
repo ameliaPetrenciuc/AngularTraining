@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, inject, input, output} from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output} from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
 import { CartItem } from '../../../../shared/types/cart-items.types';
+import { Product } from '../../../../shared/types/products.types';
 
 @Component({
   selector: 'app-cart-page-view',
@@ -13,4 +14,6 @@ import { CartItem } from '../../../../shared/types/cart-items.types';
 export class ShoppingCartPageView {
   readonly cartItems = input.required<CartItem[]>();
   readonly checkout = output<void>();
+  readonly increment = output<Product>();
+  readonly decrement = output<string>();
 }

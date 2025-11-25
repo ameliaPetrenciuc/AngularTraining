@@ -12,6 +12,16 @@
         <p>Price: {{ item.product.price | currency:'USD':'symbol':'1.2-2' }}</p>
         <p>Quantity: {{ item.quantity }}</p>
       </div>
+
+      <div class="quantity-controls">
+        <button class="qty-btn" (click)="decrement.emit(item.product.id)">-</button>
+        <span class="qty-value">{{ item.quantity }}</span>
+        <button class="qty-btn" (click)="increment.emit(item.product)">+</button>
+      </div>
+
+        <div class="item-total">
+          Total: {{ item.product.price * item.quantity | currency:'USD':'symbol':'1.2-2' }}
+        </div>
     </div>
   }
 } @else {

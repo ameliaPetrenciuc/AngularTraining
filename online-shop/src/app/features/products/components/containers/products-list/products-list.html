@@ -20,7 +20,8 @@
       <app-products-list-view 
         [products]="filteredProducts()" 
         (selectProduct)="onProductSelected($event)"
-        (addProduct)="onAddProduct()">
+        (addProduct)="onAddProduct()"
+        [user]="authService.currentUser$ | async">
       </app-products-list-view>
     </div>
   </div>

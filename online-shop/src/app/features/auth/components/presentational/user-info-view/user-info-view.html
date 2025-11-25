@@ -1,0 +1,54 @@
+ @if (!user()) {
+    <div class="icon-btn" (click)="loginClicked.emit()">
+      <img src="../../../../../../assets/human.png" alt="Login Icon" class="nav-icon">
+    </div>
+  } @else {
+    <div class="modal-footer">
+      <div class="icon-btn" (click)="profileClicked.emit()">
+      <img src="../../../../../../assets/information.png" alt="Profile Icon" class="nav-icon">
+    </div>
+      <div class="icon-btn" (click)="logoutClicked.emit()">
+        <img src="../../../../../../assets/logout.png" alt="Login Icon" class="nav-icon">
+      </div>
+    </div>
+  }
+
+  @if (user() && isOpen()) {
+    <div class="profile-container">
+      <div class="details-card">
+        <div class="modal-header">
+          <h2>My Profile</h2>
+          <button class="close-btn" (click)="closeClicked.emit()">✕</button>
+        </div>
+
+        <div class="info-row">
+          <span class="label">First Name:</span>
+          <span class="value">{{ user().firstName }}</span>
+        </div>
+
+        <div class="info-row">
+          <span class="label">Last Name:</span>
+          <span class="value">{{ user().lastName }}</span>
+        </div>
+
+        <div class="info-row">
+          <span class="label">Username:</span>
+          <span class="value">{{ user().username }}</span>
+        </div>
+
+        <div class="info-row">
+          <span class="label">Email:</span>
+          <span class="value">{{ user().email }}</span>
+        </div>
+
+        <div class="info-row">
+          <span class="label">Role:</span>
+          <span class="value badge" [class.admin]="user().role === 'ADMIN'">
+            {{ user().role }}
+          </span>
+    </div>
+  </div>
+</div>
+}
+
+

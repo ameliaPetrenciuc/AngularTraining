@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { ShoppingCartDetails } from './features/shopping-cart/components/containers/shopping-cart-details/shopping-cart-details';
+import { UserInfo } from './features/auth/components/containers/user-info/user-info';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,9 @@ import { ShoppingCartDetails } from './features/shopping-cart/components/contain
   imports: [
     RouterOutlet,
     RouterLink,
-    ShoppingCartDetails
-  ],
+    ShoppingCartDetails,
+    UserInfo
+],
   styleUrl: './app.scss',
   templateUrl: './app.html'  
 })
