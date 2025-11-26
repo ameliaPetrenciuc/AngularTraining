@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProductsFormView } from '../../presentational/products-form-view/products-form-view';
 import { ProductCategory } from '../../../../shared/types/product-category.types';
 import { ProductCategoryService } from '../../../services/product-category.service';
+import { Product } from '../../../../shared/types/products.types';
 
 @Component({
   selector: 'app-products-form',
@@ -54,7 +55,7 @@ export class ProductsForm implements OnInit {
     if (this.productForm.invalid) 
       return;
 
-    const productData = this.productForm.value as any;
+    const productData = this.productForm.value as Product;
 
     if (this.productId){
       this.productsService.update(this.productId, productData)

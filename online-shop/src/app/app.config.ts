@@ -10,7 +10,6 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideHttpClient(),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideHttpClient( withInterceptors([authInterceptor])),
