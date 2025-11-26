@@ -1,0 +1,45 @@
+:host {
+  display: block;
+  padding: 20px;
+}
+
+.search-bar-container {
+    display: flex; 
+    gap: 8px; 
+    margin-bottom: 24px; 
+}
+
+.search-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary-color, #2563eb);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.search-button {
+    background-color: var(--primary-color, #2563eb);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+        background-color: #1d4ed8;
+    }
+}
+  
+.product-layout-grid { flex-direction: column; }
+.list-panel { width: 100%; }
+.details-panel { width: 100%; }
+

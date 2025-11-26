@@ -1,0 +1,65 @@
+<div class="form-container">
+  <h2>
+    {{ isEditMode() ? 'Edit Product' : 'New Product' }}
+  </h2>
+
+  <form [formGroup]="formGroup()" (ngSubmit)="save.emit()">
+    
+    <div class="form-group">
+      <label>Product Name *</label>
+      <input type="text" formControlName="name">
+      @if (formGroup().get('name')?.invalid && formGroup().get('name')?.touched) {
+          <span class="error-msg">Name is required.</span>
+      }
+    </div>
+
+    <div class="form-group">
+      <label>Price *</label>
+      <input type="number" formControlName="price">
+      @if (formGroup().get('price')?.hasError('min') && formGroup().get('price')?.touched) {
+          <span class="error-msg">Price must be positive.</span>
+      }
+      @if (formGroup().get('price')?.hasError('required') && formGroup().get('price')?.touched) {
+        <span class="error-msg">Price is required.</span>
+      }
+    </div>
+
+    <div class="form-group">
+      <label>Weight</label>
+      <input type="number" formControlName="weight">
+    </div>
+
+    <div class="form-group">
+      <label>Description</label>
+      <textarea formControlName="description"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="category">Category *</label>
+      
+      <select id="category" formControlName="categoryId">
+        <option value="" disabled>Select a category</option>
+        
+        @for (cat of categories(); track cat.id) {
+          <option [value]="cat.id">{{ cat.name }}</option>
+        }
+      </select>
+
+      @if (formGroup().get('categoryId')?.invalid && formGroup().get('categoryId')?.touched) {
+         <span class="error-msg">Category is required.</span>
+      }
+    </div>
+
+    <div class="form-actions">
+      
+      <button type="submit" class="save-button" [disabled]="formGroup().invalid">
+        Save
+      </button>
+
+      <button type="button" class="cancel-button" (click)="cancel.emit()">
+        Cancel
+      </button>
+    </div>
+
+  </form>
+</div>

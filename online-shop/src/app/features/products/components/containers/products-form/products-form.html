@@ -1,0 +1,7 @@
+<app-products-form-view
+      [formGroup]="productForm"
+      [categories]="categories()"
+      [isEditMode]="!!productId"
+      (save)="onSave()"
+      (cancel)="onCancel()"
+></app-products-form-view>

@@ -1,0 +1,48 @@
+:host {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-card {
+  max-width: 400px;
+  width: 100%;
+  padding: 16px;
+  
+  mat-card-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.error-banner {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  text-align: center;
+  border: 1px solid #ffcdd2;
+  font-size: 0.9rem;
+}
+
+.actions {
+  display: flex;
+  margin-top: 8px;
+  
+  button {
+    flex: 1; 
+    padding: 24px 0;
+  }
+}

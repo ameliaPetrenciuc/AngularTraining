@@ -1,0 +1,8 @@
+<app-user-info-view
+  [user]="authService.currentUser$ | async"
+  (loginClicked)="onLogin()"
+  (logoutClicked)="onLogout()"
+  [isOpen]="isProfileOpen()"
+  (profileClicked)="onProfileClick()"
+  (closeClicked)="onCloseProfile()">
+</app-user-info-view>

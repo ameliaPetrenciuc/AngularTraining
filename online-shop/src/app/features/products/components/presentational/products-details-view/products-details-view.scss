@@ -1,0 +1,113 @@
+.details-card {
+    border: 1px solid #ccc;
+    padding: 30px; 
+    margin: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    flex-direction: column; 
+    align-items: center;    
+    text-align: center;
+    max-width: 600px; 
+    width: 100%;
+}
+
+.actions-toolbar {
+  display: flex;
+  width: 100%;              
+  justify-content: flex-end; 
+  padding: 0 50px;          
+  box-sizing: border-box;  
+  margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.price {
+    font-weight: bold;
+    color: var(--primary-color, #2563eb);
+    font-size: 1.3rem;
+    margin-top: 10px;
+}
+
+.description {
+    opacity: 0.8;
+}
+
+.actions-toolbar {
+  width: 100%;      
+  max-width: 800px;      
+  display: flex;
+  justify-content: flex-end; 
+  gap: 10px;            
+  margin-bottom: 20px;   
+  padding: 0 20px;     
+}
+
+
+.edit-button, .delete-button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.edit-button {
+    background-color: var(--primary-color, #2563eb);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 20px;
+
+    &:hover {
+        background-color: #1d4ed8;
+    }
+}
+
+.delete-button {
+    background-color: #dc2626;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 20px;
+
+    &:hover {
+    background-color: #b51515;}
+}
+
+
+.add-button {
+    background-color: var(--primary-color, #2563eb);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 20px;
+
+    &:hover {
+        background-color: #1d4ed8;
+    }
+}

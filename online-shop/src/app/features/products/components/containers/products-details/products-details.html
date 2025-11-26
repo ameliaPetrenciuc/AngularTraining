@@ -1,0 +1,14 @@
+@if (product()){
+    <app-products-details-view 
+        [product]="product()!"
+        (addToCart)="onAddToCart($event)"
+        (deleteProduct)="onDeleteProduct()"
+        (editProduct)="onEditProduct()"
+        [user]="authService.currentUser$ | async">
+    </app-products-details-view>
+}@else {
+    <div class="no-selection">
+          Please select a product.
+    </div>
+}
+   
